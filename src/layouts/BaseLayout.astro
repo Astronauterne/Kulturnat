@@ -1,0 +1,30 @@
+---
+import "../styles/reset.css"
+const { pageTitle } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name='generator' content={Astro.generator} />
+    <title>{pageTitle}</title>
+</head>
+
+<body>
+    <h1>{pageTitle}</h1>
+</body>
+</html>
+
+<style>
+body {
+    background-image: url("../assets/bg.webp");
+    background-size: cover;
+    background-position: center;
+}
+
+h1 {
+    font-size: 8rem;
+}
+</style>
