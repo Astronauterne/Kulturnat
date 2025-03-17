@@ -1,6 +1,7 @@
 ---
 import "../styles/reset.css"
 import "../styles/colors.css"
+
 const { pageTitle } = Astro.props;
 ---
 
@@ -15,17 +16,51 @@ const { pageTitle } = Astro.props;
 
 <body>
     <h1>{pageTitle}</h1>
+    <slot/>
 </body>
 </html>
 
 <style>
+
+@media (min-width: 1000px) {
+    body {
+    background-image: url("../assets/sand.webp");
+    background-size: 100%;
+}
+
+}
+
 body {
     background-image: url("../assets/bg.webp");
     background-size: cover;
     background-position: center;
 }
 
+
 h1 {
     font-size: 8rem;
+    color: var(--heading-h1);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h2 {
+    font-size: 4rem;
+    color: var(--heading-h2);
+}
+
+h3 {
+    font-size: 3rem;
+    color: var(--heading-h3);
+}
+
+h4 {
+    font-size: 2rem;
+    color: var(--heading-h4);
+}
+
+p {
+    font-size: 1rem;
+    color: var(--heading-fg);
 }
 </style>
