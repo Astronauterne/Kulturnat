@@ -1,0 +1,26 @@
+/* Primaries */
+:root {
+    /* Mode 1 */
+    /* color */
+    --primaries-blues-100: #b5bfd6;
+    --primaries-blues-50: #f1f6fd;
+    --primaries-greys-100: #242424;
+  }
+  /* Tokens */
+  :root {
+    /* Mode 1 */
+    /* color */
+    --button-border: var(--primaries-greys-100);
+    --button-fg: var(--primaries-greys-100);
+    --button-shadow: var(--primaries-greys-100);
+    --card-bg: var(--primaries-blues-50);
+    --card-button: var(--primaries-greys-100);
+    --card-fg: var(--primaries-greys-100);
+    --card-shadow: var(--primaries-greys-100);
+    --heading-fg: var(--primaries-greys-100);
+    --heading-h1: var(--primaries-greys-100);
+    --heading-h2: var(--primaries-greys-100);
+    --heading-h3: var(--primaries-greys-100);
+    --heading-h4: var(--primaries-greys-100);
+    --menu-bg: var(--primaries-blues-100);
+  }
