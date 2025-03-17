@@ -1,0 +1,43 @@
+---
+const { billede, kategori, titel, lokation, tid, by } = Astro.props;
+import PlusButton from "./PlusButton.astro";
+---
+
+<article>
+  <img src={billede} alt="" />
+  <div>
+    <p>{kategori}</p>
+    <h4>{titel}</h4>
+    <p>{lokation}</p>
+    <p>{tid}</p>
+    <PlusButton />
+    <p>{by}</p>
+  </div>
+</article>
+
+<!-- til mobil -->
+<style>
+  article {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    border-radius: 18px;
+    max-width: 600px;
+    background-color: beige;
+  }
+  article img {
+    padding: 0 10px 0 0;
+  }
+</style>
+
+<!-- media query til desktop -->
+<style>
+  @media (min-width: 800px) {
+    article {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: none;
+    }
+    article img {
+      padding: 0 0 10px 0;
+    }
+  }
+</style>
