@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import menu from '../images/menu.svg';
 import icon from '../images/icon.svg';
+import MenuOverlay from './MenuOverlay.astro';
 ---
 
 <header>
@@ -20,38 +21,40 @@ import icon from '../images/icon.svg';
 		<div class='hamburger'>
 			<Image src={menu} alt='menu icon' class='menuIcon' />
 		</div>
+		<MenuOverlay />
 	</nav>
+
+	<style>
+		header {
+			height: 10vh;
+			width: 100vw;
+			position: fixed;
+		}
+
+		nav {
+			padding: 2.5vh 1vw;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		.hamburger {
+			cursor: pointer;
+		}
+
+		.menuIcon {
+			height: 2rem;
+			width: auto;
+		}
+
+		.dates {
+			text-align: center;
+			color: var(--heading-fg);
+			font-family: 'Afacad Regular';
+		}
+
+		.bold {
+			font-family: 'Afacad Bold';
+		}
+	</style>
 </header>
-
-<style>
-	header {
-		height: 10vh;
-		width: 100vw;
-	}
-
-	nav {
-		padding: 2.5vh 1vw;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-
-	.hamburger {
-		cursor: pointer;
-	}
-
-	.menuIcon {
-		height: 2rem;
-		width: auto;
-	}
-
-	.dates {
-		text-align: center;
-		color: var(--heading-fg);
-        font-family: 'Afacad Regular';
-	}
-
-	.bold {
-        font-family: 'Afacad Bold';
-	}
-</style>
