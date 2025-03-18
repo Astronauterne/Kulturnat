@@ -24,17 +24,11 @@ const { pageTitle } = Astro.props;
 	</body>
 
 	<style is:global>
-		@media (min-width: 1000px) {
-			body {
-				background-image: url('../assets/sand.webp');
-				background-size: 100%;
-			}
-		}
-
 		body {
-			background-image: url('../assets/bg.webp');
+			background-image: url('../assets/sand.webp');
 			background-size: cover;
-			background-position: center;
+			background-repeat: no-repeat;
+			min-height: 100vh;
 		}
 
 		h1 {
