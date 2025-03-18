@@ -1,0 +1,56 @@
+---
+import { Image } from 'astro:assets';
+import menu from '../images/menu.svg';
+import icon from '../images/icon.svg';
+---
+
+<header>
+	<nav>
+		<div class='icon'>
+			<a href='/'>
+				<Image src={icon} alt='icon' />
+			</a>
+		</div>
+		<div class='dates'>
+			<h5>
+				Espergærde & Helsingør: <span class='bold'>26. september</span>
+			</h5>
+			<h5>Tikøb: <span class='bold'>19. september</span></h5>
+		</div>
+		<div class='hamburger'>
+			<Image src={menu} alt='menu icon' class='menuIcon' />
+		</div>
+	</nav>
+</header>
+
+<style>
+	header {
+		height: 10vh;
+		width: 100vw;
+	}
+
+	nav {
+		padding: 2.5vh 1vw;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.hamburger {
+		cursor: pointer;
+	}
+
+	.menuIcon {
+		height: 2rem;
+		width: auto;
+	}
+
+	.dates {
+		text-align: center;
+		color: var(--heading-fg);
+	}
+
+	.bold {
+		font-weight: bold;
+	}
+</style>
