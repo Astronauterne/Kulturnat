@@ -1,0 +1,30 @@
+---
+const { buttonText } = Astro.props;
+---
+
+<div class='button'>
+	{buttonText}
+</div>
+
+<style>
+	.button {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		font-size: 1.5rem;
+        font-family: "Afacad Regular";
+		text-align: center;
+		width: 12rem;
+		height: 4rem;
+		border: 3px solid #242424;
+		box-shadow: 5px 5px 1px;
+		cursor: pointer;
+		margin-top: 10vh;
+	}
+
+	.button:hover {
+		transform: translateX(5px) translateY(5px);
+		box-shadow: none;
+		transition: 0.5s;
+	}
+</style>
