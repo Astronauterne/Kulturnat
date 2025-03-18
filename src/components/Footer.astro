@@ -1,0 +1,122 @@
+---
+import { Image } from 'astro:assets';
+import helsingor from '../images/logo_1.png';
+import kulturnat from '../images/logo_2.png';
+import elsinore from '../images/logo_3.png';
+import facebook from '../images/facebook.svg';
+import instagram from '../images/instagram.svg';
+import FooterBorder from '../components/footer/FooterBorder.astro';
+---
+
+<FooterBorder />
+
+<footer>
+	<div class='contactContainer'>
+		<div class='contact'>
+			<h5>Kontaktoplysninger</h5>
+			<p>Har du spørgsmål til kulturnat?</p>
+			<p>
+				Email: <a href='mailto:kulturnatten@elsinore2032.dk'
+					>kulturnatten@elsinore2032.dk</a
+				>
+			</p>
+		</div>
+
+		<div class='shortcutContainer'>
+			<div class='shortcuts'>
+				<h5>Genveje</h5>
+				<ul>
+					<li>Program</li>
+					<li>Praktiske oplysninger</li>
+					<li>Kontakt</li>
+				</ul>
+			</div>
+
+			<div class='social'>
+				<h5>Sociale medier</h5>
+				<div class='socialLinks'>
+					<a href='http://'
+						><Image src={facebook} alt='facebook logo' /></a
+					>
+					<a href='http://'
+						><Image src={instagram} alt='instagram logo' /></a
+					>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class='logos'>
+		<a href='http://'><Image src={kulturnat} alt='logo' width='150' /></a>
+		<a href='http://'><Image src={elsinore} alt='logo' width='150' /></a>
+		<a href='http://'><Image src={helsingor} alt='logo' width='150' /></a>
+	</div>
+</footer>
+
+<style>
+	footer {
+		background-color: var(--menu-bg);
+		display: flex;
+		flex-direction: column;
+		padding: 1rem;
+		gap: 1rem;
+		margin-top: 20vh;
+	}
+
+	.contact {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.shortcutContainer {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.shortcuts {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.shortcuts ul {
+		list-style: none;
+		font-family: 'Afacad Regular';
+	}
+
+	.social {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.socialLinks {
+		display: flex;
+		flex-direction: row;
+		gap: 0.75rem;
+	}
+
+	.logos {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		padding: 1rem;
+		justify-content: center;
+		align-items: center;
+		gap: 2rem;
+	}
+
+    @media (min-width: 800px) {
+
+        footer {
+            gap:2rem;
+        }
+        .contactContainer {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .shortcutContainer {
+		display: flex;
+        width: 55%;
+	}
+    }
+</style>

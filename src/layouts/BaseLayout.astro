@@ -4,6 +4,7 @@ import '../styles/reset.css';
 import '../styles/colors.css';
 import '../styles/fonts.css';
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
 const { pageTitle } = Astro.props;
 ---
@@ -22,7 +23,7 @@ const { pageTitle } = Astro.props;
 	<body>
 		<slot />
 	</body>
-
+	<Footer />
 	<script
 		is:inline
 		src='https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js'
@@ -38,10 +39,12 @@ const { pageTitle } = Astro.props;
 			background-position: center;
 			min-height: 90vh;
 			padding-top: 10vh;
+            width: 100vw;
+            overflow-x: hidden;
 		}
 
 		h1 {
-			font-size: clamp(4rem, 10vw, 8rem);
+			font-size: clamp(3.5rem, 10vw, 8rem);
 			color: var(--heading-h1);
 			text-transform: uppercase;
 			text-align: center;
@@ -62,6 +65,18 @@ const { pageTitle } = Astro.props;
 
 		h4 {
 			font-size: 2rem;
+			color: var(--heading-h4);
+			font-family: 'Afacad Regular';
+		}
+
+		h5 {
+			font-size: 1.5rem;
+			color: var(--heading-h4);
+			font-family: 'Afacad Regular';
+		}
+
+        h6 {
+			font-size: 1rem;
 			color: var(--heading-h4);
 			font-family: 'Afacad Regular';
 		}
