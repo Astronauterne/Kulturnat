@@ -1,6 +1,7 @@
 ---
 import '../styles/reset.css';
 import '../styles/colors.css';
+import '../styles/fonts.css';
 import Header from '../components/Header.astro';
 
 const { pageTitle } = Astro.props;
@@ -19,7 +20,6 @@ const { pageTitle } = Astro.props;
 		<h1>{pageTitle}</h1>
 		<slot />
 	</body>
-
 
 	<style is:global>
 		@media (min-width: 1000px) {
@@ -40,26 +40,32 @@ const { pageTitle } = Astro.props;
 			color: var(--heading-h1);
 			text-transform: uppercase;
 			text-align: center;
+			font-family: 'Futura Heavy';
 		}
 
 		h2 {
 			font-size: 4rem;
 			color: var(--heading-h2);
+			font-family: 'Futura Medium';
 		}
 
 		h3 {
 			font-size: 3rem;
 			color: var(--heading-h3);
+			font-family: 'Futura Heavy';
 		}
 
 		h4 {
 			font-size: 2rem;
 			color: var(--heading-h4);
+			font-family: 'Afacad Regular';
 		}
 
 		p {
 			font-size: 1rem;
 			color: var(--heading-fg);
+			font-family: 'Afacad Regular';
 		}
 	</style>
+
 </html>
