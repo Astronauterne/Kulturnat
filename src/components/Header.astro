@@ -6,55 +6,60 @@ import MenuOverlay from './MenuOverlay.astro';
 ---
 
 <header>
-	<nav>
-		<div class='icon'>
-			<a href='/'>
-				<Image src={icon} alt='icon' />
-			</a>
-		</div>
-		<div class='dates'>
-			<h5>
-				Espergærde & Helsingør: <span class='bold'>26. september</span>
-			</h5>
-			<h5>Tikøb: <span class='bold'>19. september</span></h5>
-		</div>
-		<div class='hamburger'>
-			<Image src={menu} alt='menu icon' class='menuIcon' />
-		</div>
-		<MenuOverlay />
-	</nav>
-
-	<style>
-		header {
-			height: 10vh;
-			width: 100vw;
-			position: fixed;
-		}
-
-		nav {
-			padding: 2.5vh 1vw;
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-		}
-
-		.hamburger {
-			cursor: pointer;
-		}
-
-		.menuIcon {
-			height: 2rem;
-			width: auto;
-		}
-
-		.dates {
-			text-align: center;
-			color: var(--heading-fg);
-			font-family: 'Afacad Regular';
-		}
-
-		.bold {
-			font-family: 'Afacad Bold';
-		}
-	</style>
+	<div class='icon'>
+		<a href='/'>
+			<Image src={icon} alt='icon' />
+		</a>
+	</div>
+	<div class='dates'>
+		<h5>
+			Espergærde & Helsingør: <span class='bold'>26. september</span>
+		</h5>
+		<h5>Tikøb: <span class='bold'>19. september</span></h5>
+	</div>
+	<div class='hamburger'>
+		<Image src={menu} alt='menu icon' class='menuIcon' />
+	</div>
 </header>
+<MenuOverlay />
+<script>
+	const menuIcon = document.querySelector('.hamburger');
+	const menuOverlay = document.querySelector('.menuOverlay');
+	menuIcon.addEventListener('click', () => {
+		menuOverlay.classList.toggle('active');
+		console.log('click');
+	});
+</script>
+<style>
+	header {
+		height: 10vh;
+		width: 100vw;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 200;
+		padding: 2.5vh 1vw;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.hamburger {
+		cursor: pointer;
+	}
+
+	.menuIcon {
+		height: 2rem;
+		width: auto;
+	}
+
+	.dates {
+		text-align: center;
+		color: var(--heading-fg);
+		font-family: 'Afacad Regular';
+	}
+
+	.bold {
+		font-family: 'Afacad Bold';
+	}
+</style>
