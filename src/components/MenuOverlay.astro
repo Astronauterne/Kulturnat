@@ -1,0 +1,49 @@
+---
+
+---
+
+<div class='menuOverlay'>
+	<ul>
+		<li><a href='/'>FORSIDE</a></li>
+		<li><a href='http://'>PROGRAM</a></li>
+		<li><a href='http://'>OM KULTURNATTEN</a></li>
+		<li><a href='http://'>BLIV ARRANGØR</a></li>
+	</ul>
+</div>
+
+<style>
+	.menuOverlay {
+		background-color: var(--menu-bg);
+		height: 100vh;
+		width: 100vw;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		position: fixed;
+		display: none;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.menuOverlay ul {
+		list-style: none;
+		justify-content: center;
+		margin: auto;
+	}
+
+	.menuOverlay li {
+		padding-bottom: 2rem;
+	}
+
+	.menuOverlay a {
+		text-decoration: none;
+		color: var(--heading-fg);
+		font-family: 'Futura Medium';
+		font-size: 4rem;
+		font-weight: 700;
+	}
+
+	.menuOverlay a:visited {
+		color: var(--heading-fg);
+	}
+</style>
