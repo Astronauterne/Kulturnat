@@ -2,14 +2,16 @@
 
 ---
 
-<div class='menuOverlay'>
-	<ul>
-		<li><a href='/'>FORSIDE</a></li>
-		<li><a href='http://'>PROGRAM</a></li>
-		<li><a href='http://'>OM KULTURNATTEN</a></li>
-		<li><a href='http://'>BLIV ARRANGØR</a></li>
-	</ul>
-</div>
+<nav>
+	<div class='menuOverlay'>
+		<ul>
+			<li><a href='/'>FORSIDE</a></li>
+			<li><a href='http://'>PROGRAM</a></li>
+			<li><a href='http://'>OM KULTURNATTEN</a></li>
+			<li><a href='http://'>BLIV ARRANGØR</a></li>
+		</ul>
+	</div>
+</nav>
 
 <style>
 	.menuOverlay {
@@ -23,6 +25,10 @@
 		display: none;
 		flex-direction: column;
 		justify-content: center;
+	}
+
+	.menuOverlay.active {
+		display: flex;
 	}
 
 	.menuOverlay ul {
