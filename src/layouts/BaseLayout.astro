@@ -20,7 +20,6 @@ const { pageTitle } = Astro.props;
 	</head>
 	<Header />
 	<body>
-		<h1>{pageTitle}</h1>
 		<slot />
 	</body>
 
@@ -37,11 +36,12 @@ const { pageTitle } = Astro.props;
 			background-size: cover;
 			background-repeat: no-repeat;
 			background-position: center;
-			min-height: 100vh;
+			min-height: 90vh;
+			padding-top: 10vh;
 		}
 
 		h1 {
-			font-size: 8rem;
+			font-size: clamp(4rem, 10vw, 8rem);
 			color: var(--heading-h1);
 			text-transform: uppercase;
 			text-align: center;

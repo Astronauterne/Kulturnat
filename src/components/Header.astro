@@ -22,9 +22,10 @@ import MenuOverlay from './MenuOverlay.astro';
 	</div>
 </header>
 <MenuOverlay />
-<script>
+<script is:inline>
 	const menuIcon = document.querySelector('.hamburger');
 	const menuOverlay = document.querySelector('.menuOverlay');
+
 	menuIcon.addEventListener('click', () => {
 		menuOverlay.classList.toggle('active');
 		console.log('click');
