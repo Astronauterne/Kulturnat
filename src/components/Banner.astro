@@ -1,0 +1,77 @@
+---
+import { Image } from 'astro:assets';
+import fch from '../images/banner/fch.png';
+import hi from '../images/banner/hi.png';
+import kaj from '../images/banner/kaj.png';
+import kbh from '../images/banner/kbh.png';
+import moviehouse from '../images/banner/moviehouse.png';
+---
+
+<div class='banner'>
+	<div class='scroll' id='scrollOne'>
+		<Image src={fch} alt='' />
+		<Image src={hi} alt='' />
+		<Image src={kaj} alt='' />
+		<Image src={kbh} alt='' />
+		<Image src={moviehouse} alt='' />
+	</div>
+	<div class='scroll' id='scrollTwo'>
+		<Image src={fch} alt='' />
+		<Image src={hi} alt='' />
+		<Image src={kaj} alt='' />
+		<Image src={kbh} alt='' />
+		<Image src={moviehouse} alt='' />
+	</div>
+</div>
+
+<style>
+	.banner {
+		height: 5rem;
+		width: 100%;
+		background-color: var(--menu-bg);
+		gap: 2rem;
+		overflow: hidden;
+	}
+
+	.scroll {
+		display: flex;
+		animation: loop 15s linear infinite;
+		justify-content: space-evenly;
+		align-items: center;
+		width: fit-content;
+		white-space: nowrap;
+		height: 100%;
+		gap: 4rem;
+		margin-right: -1600px;
+	}
+
+	.scroll#scrollOne {
+		transform: translateX(-75%);
+	}
+
+	.scroll#scrollTwo {
+		transform: translateX(100%);
+		animation-delay: 7.5s;
+	}
+
+	.scroll img {
+		height: 80%;
+		width: auto;
+	}
+
+	@keyframes loop {
+		0% {
+			transform: translateX(100%);
+		}
+		100% {
+			transform: translateX(-100%);
+		}
+	}
+
+	@media (min-width: 800px) {
+		.banner {
+			height: 8rem;
+			gap: 4rem;
+		}
+	}
+</style>
