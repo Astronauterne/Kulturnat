@@ -1,5 +1,6 @@
 [
   {
+    "eventId": 1,
     "billede": "/images/beertasting.png",
     "catIconPath": "/andet.png",
     "kategori": "Gastronomi",
@@ -10,6 +11,7 @@
   },
 
   {
+    "eventId": 2,
     "billede": "/images/clown.jpeg",
     "catIconPath": "/andet.png",
     "kategori": "Kunst",
@@ -19,6 +21,7 @@
     "by": "Helsingør"
   },
   {
+    "eventId": 3,
     "billede": "/images/seamuseum.png",
     "catIconPath": "/andet.png",
     "kategori": "Udstillinger",
@@ -28,6 +31,7 @@
     "by": "Helsingør"
   },
   {
+    "eventId": 4,
     "billede": "/images/kassemat.webp",
     "catIconPath": "/andet.png",
     "kategori": "Udstillinger",

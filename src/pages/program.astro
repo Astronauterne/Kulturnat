@@ -1,13 +1,26 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import CardGrid from "../components/CardGrid.astro";
-import Cities from "../components/Cities.astro";
-import Categories from "../components/Categories.astro";
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CardGrid from '../components/CardGrid.astro';
+import Cities from '../components/Cities.astro';
+import Categories from '../components/Categories.astro';
 ---
 
 <BaseLayout>
-    <h1>Program</h1>
-    <Cities></Cities>
-    <Categories></Categories>
-    <CardGrid></CardGrid>
+	<h1>Program</h1>
+	<Cities />
+	<Categories />
+	<CardGrid />
 </BaseLayout>
+
+<script>
+	document.addEventListener('astro:page-load', () => {
+		let cards = document.querySelectorAll('.card');
+		console.log(cards);
+		cards.forEach((card) => {
+			card.addEventListener('click', () => {
+				card.classList.toggle('expanded');
+				console.log('expand!');
+			});
+		});
+	});
+</script>
