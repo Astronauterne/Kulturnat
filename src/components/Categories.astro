@@ -7,10 +7,22 @@ const categories = [
 	'musik',
 	'udstilling',
 	'andet',
-];
+];				
 ---
+<script>
+    document.addEventListener('astro:page-load', ()=> {
+        const id = 	new URLSearchParams(window.location.search).get('id');
+        const cat = document.getElementById('categoryToggle')
+        const catContainer = document.querySelector('.catContainer')
+        console.log(id);
+        cat?.addEventListener('click', ()=> {
+            catContainer?.classList.toggle('active')
+        })	
+    })
+</script>
 
-<h3>Kategorier</h3>
+
+<h3 id='categoryToggle'>Kategorier</h3>
 <div class='catContainer'>
 	{categories.map((category) => 
     <a href=`/program?category=${category}`>
@@ -27,7 +39,7 @@ const categories = [
     }
 
 	.catContainer {
-		display: flex;
+		display: none;
 		flex-wrap: wrap;
 		width: 90vw;
 		margin-left: 5vw;
@@ -36,6 +48,10 @@ const categories = [
 		justify-content: center;
 		gap: 1rem;
 	}
+
+    .catContainer.active {
+        display: flex;
+    }
 
 	.catButton {
 		display: flex;
@@ -53,8 +69,8 @@ const categories = [
 	}
 
     .catButton img {
-        height: 100%;
-        width: auto;
+        height: auto;
+        width: 20%;
     }
 
     .catContainer a {
