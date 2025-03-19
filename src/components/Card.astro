@@ -13,12 +13,17 @@ import PlusButton from './PlusButton.astro';
 			<p>{kategori}</p>
 		</div>
 		<h4 class='eventName'>{titel}</h4>
-		<p>{lokation}</p>
-		<p>{tid}</p>
+		<div>
+			<md-icon>location_on</md-icon>
+			<p>{lokation}</p>
+		</div>
+		<div>
+			<md-icon>schedule</md-icon>
+			<p>{tid}</p>
+		</div>
 		<p>{by}</p>
 	</div>
 	<div class='lastLine'>
-			
 		<md-filled-icon-button id='addToggle'>
 			<md-icon>add</md-icon>
 		</md-filled-icon-button>
@@ -36,6 +41,14 @@ import PlusButton from './PlusButton.astro';
 		border-radius: 18px 18px 0px 0px;
 	}
 
+	article h4 {
+			font-size: 1.5rem;
+			color: var(--heading-h4);
+			font-family: 'Afacad Regular';
+			text-align: center;
+			padding: 0 1rem 0 1rem;
+		}
+
 	.lastLine {
 		display: flex;
 		width: 100%;
@@ -44,19 +57,35 @@ import PlusButton from './PlusButton.astro';
 		transform: translateY(-1rem);
 	}
 
+	.lastLine md-icon {
+		color: var(--card-bg);
+		--md-icon-size: 2rem;
+	}
+
 	.cardInfo {
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
 		align-items: center;
-		gap: 1.5rem;
+		gap: 1rem;
 		padding-top: 1rem;
 		text-transform: uppercase;
+	}
+
+	.cardInfo div {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		padding-left: 15%;
+		padding-right: 15%;
+		gap: 0.5rem;
 	}
 
 	.categoryContainer {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
+		justify-content: center;
 		gap: 0.5rem;
 	}
 
@@ -86,10 +115,12 @@ import PlusButton from './PlusButton.astro';
 
 		.cardInfo {
 			width: 50%;
+			height: 100%;
+			transform: translateX(-2rem);
 		}
 
 		.lastLine {
-		transform: translateY(9rem);
-	}
+			transform: translateY(9rem);
+		}
 	}
 </style>
