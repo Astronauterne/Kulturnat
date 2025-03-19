@@ -10,6 +10,8 @@ const categories = [
 ];				
 ---
 <script>
+	import '@material/web/iconbutton/filled-icon-button.js';
+	import '@material/web/icon/icon.js';
     document.addEventListener('astro:page-load', ()=> {
         const id = 	new URLSearchParams(window.location.search).get('id');
         const cat = document.getElementById('categoryToggle')
@@ -17,12 +19,24 @@ const categories = [
         console.log(id);
         cat?.addEventListener('click', ()=> {
             catContainer?.classList.toggle('active')
+			if (catContainer?.classList.contains('active')) {
+				cat.innerHTML = `<md-icon>arrow_drop_up</md-icon>`
+			}
+			else {
+				cat.innerHTML = `<md-icon>arrow_drop_down</md-icon>`
+			}
         })	
     })
 </script>
 
 
-<h3 id='categoryToggle'>Kategorier</h3>
+<div class='catToggleContainer'>
+	<h3>Kategorier</h3>
+	<md-filled-icon-button id='categoryToggle'>
+		<md-icon>arrow_drop_down</md-icon>
+	</md-filled-icon-button>
+</div>
+
 <div class='catContainer'>
 	{categories.map((category) => 
     <a href=`/program?category=${category}`>
@@ -38,6 +52,15 @@ const categories = [
         padding-bottom: 1.5rem;
     }
 
+	.catToggleContainer {
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+	}
+
+	#categoryToggle {
+		transform: translateY(0.5rem);
+	}
 	.catContainer {
 		display: none;
 		flex-wrap: wrap;

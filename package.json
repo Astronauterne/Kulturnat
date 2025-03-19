@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@material/web": "^2.2.0",
     "astro": "^5.5.2"
   },
   "devDependencies": {
