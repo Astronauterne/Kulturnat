@@ -1,0 +1,39 @@
+[
+  {
+    "billede": "/images/beertasting.png",
+    "catIconPath": "/andet.png",
+    "kategori": "Gastronomi",
+    "titel": "Ølsmagning for alle",
+    "lokation": "Plænen Øst",
+    "tid": "16:00",
+    "by": "Helsingør"
+  },
+
+  {
+    "billede": "/images/clown.jpeg",
+    "catIconPath": "/andet.png",
+    "kategori": "Kunst",
+    "titel": "Klovneshow",
+    "lokation": "Cirkusteltet",
+    "tid": "18:00",
+    "by": "Helsingør"
+  },
+  {
+    "billede": "/images/seamuseum.png",
+    "catIconPath": "/andet.png",
+    "kategori": "Udstillinger",
+    "titel": "Søfartsmuseet after dark",
+    "lokation": "Søfartsmuseet",
+    "tid": "21:00",
+    "by": "Helsingør"
+  },
+  {
+    "billede": "/images/kassemat.webp",
+    "catIconPath": "/andet.png",
+    "kategori": "Udstillinger",
+    "titel": "Natterend i kassematterne",
+    "lokation": "Kronborg Slot",
+    "tid": "20:00",
+    "by": "Helsingør"
+  }
+]

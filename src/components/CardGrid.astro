@@ -1,45 +1,23 @@
 ---
 import Card from './Card.astro';
-import PlusButton from './PlusButton.astro';
+import events from '../data/events.json'
 ---
 
 <div class='wrapper'>
-	<Card
-		billede='https://via.assets.so/album.png?id=2&q=95&w=360&h=360&fit=fill'
-		catIconPath='/andet.png'
-		kategori='TEATER'
-		titel='Ølsmagning for pensionister'
-		lokation='plænen under buen'
-		tid='16:00'
-		by='Helsingør'
+	{
+		events.map((e) => (
+		<Card
+		billede= {e.billede}
+		catIconPath={e.catIconPath}
+		kategori={e.kategori}
+		titel={e.titel}
+		lokation={e.lokation}
+		tid={e.tid}
+		by={e.by}
 	/>
-	<Card
-		billede='https://via.assets.so/album.png?id=4&q=95&w=360&h=360&fit=fill'
-		catIconPath='/andet.png'
-		kategori='TEATER'
-		titel='Ølsmagning for pensionister'
-		lokation='plænen under buen'
-		tid='16:00'
-		by='Helsingør'
-	/>
-	<Card
-		billede='https://via.assets.so/album.png?id=2&q=95&w=360&h=360&fit=fill'
-		catIconPath='/andet.png'
-		kategori='TEATER'
-		titel='Ølsmagning for pensionister'
-		lokation='plænen under buen'
-		tid='16:00'
-		by='Helsingør'
-	/>
-	<Card
-		billede='https://via.assets.so/album.png?id=2&q=95&w=360&h=360&fit=fill'
-		catIconPath='/andet.png'
-		kategori='TEATER'
-		titel='Ølsmagning for pensionister'
-		lokation='plænen under buen'
-		tid='16:00'
-		by='Helsingør'
-	/>
+		))
+	}
+
 </div>
 
 <style>
