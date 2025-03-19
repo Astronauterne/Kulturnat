@@ -17,19 +17,31 @@ import PlusButton from './PlusButton.astro';
 		<p>{tid}</p>
 		<p>{by}</p>
 	</div>
+	<div class='lastLine'>
+			
+		<md-filled-icon-button id='addToggle'>
+			<md-icon>add</md-icon>
+		</md-filled-icon-button>
+	</div>
 </article>
 
-<!-- til mobil -->
 <style>
 	article {
 		display: flex;
 		flex-direction: column;
 		border-radius: 18px;
 		background-color: var(--card-bg);
-		padding-bottom: 1rem;
 	}
 	article img {
 		border-radius: 18px 18px 0px 0px;
+	}
+
+	.lastLine {
+		display: flex;
+		width: 100%;
+		padding-left: 0.5rem;
+		justify-content: space-between;
+		transform: translateY(-1rem);
 	}
 
 	.cardInfo {
@@ -75,5 +87,9 @@ import PlusButton from './PlusButton.astro';
 		.cardInfo {
 			width: 50%;
 		}
+
+		.lastLine {
+		transform: translateY(9rem);
+	}
 	}
 </style>
