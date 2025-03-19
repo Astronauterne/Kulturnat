@@ -22,13 +22,15 @@ import MenuOverlay from './MenuOverlay.astro';
 	</div>
 </header>
 <MenuOverlay />
-<script is:inline>
-	const menuIcon = document.querySelector('.hamburger');
-	const menuOverlay = document.querySelector('.menuOverlay');
+<script>
+	document.addEventListener('astro:page-load', () => {
+		const menuIcon = document.querySelector('.hamburger');
+		const menuOverlay = document.querySelector('.menuOverlay');
 
-	menuIcon.addEventListener('click', () => {
-		menuOverlay.classList.toggle('active');
-		console.log('click');
+		menuIcon.addEventListener('click', () => {
+			menuOverlay.classList.toggle('active');
+			console.log('click');
+		});
 	});
 </script>
 <style>
@@ -67,24 +69,21 @@ import MenuOverlay from './MenuOverlay.astro';
 </style>
 
 <script>
-	// CONSTANTS
-const navbar = document.querySelector("header");
-
-// VARIABLES
-let pastScrollPosition = 0;
-
-// EVENTLISTENERS
-window.addEventListener("scroll", () => {
-  let currentScrollPosition = scrollY;
-  if (
-    currentScrollPosition > pastScrollPosition &&
-    currentScrollPosition > 130
-  ) {
-    navbar.style.top = "-100px";
-  } else {
-    navbar.style.top = "0";
-  }
-  return (pastScrollPosition = scrollY);
-});
-
+	// EVENTLISTENERS
+	document.addEventListener('astro:page-load', () => {
+		let pastScrollPosition = 0;
+		window.addEventListener('scroll', () => {
+			const navbar = document.querySelector('header');
+			let currentScrollPosition = scrollY;
+			if (
+				currentScrollPosition > pastScrollPosition &&
+				currentScrollPosition > 130
+			) {
+				navbar.style.top = '-100px';
+			} else {
+				navbar.style.top = '0';
+			}
+			return (pastScrollPosition = scrollY);
+		});
+	});
 </script>
