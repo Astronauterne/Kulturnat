@@ -38,6 +38,7 @@ import PlusButton from './PlusButton.astro';
 		gap: 1.5rem;
 		padding-top: 1rem;
     text-transform: uppercase;
+    
 	}
 
   .categoryContainer {
@@ -54,17 +55,24 @@ import PlusButton from './PlusButton.astro';
 	.eventName {
 		text-align: center;
 	}
-</style>
 
-<!-- media query til desktop -->
-<style>
-	@media (min-width: 800px) {
+  @media (min-width: 800px) {
 		article {
-			grid-template-columns: 1fr 1fr;
-			grid-template-rows: none;
+			flex-direction: row-reverse;
+      padding-bottom: 0px;
+      align-items: center;
+      height: 21.875rem;
+      width: 33.32013rem;;
 		}
-		article img {
-			padding: 0 0 10px 0;
-		}
+
+    article img {
+      border-radius: 0px 18px 18px 0px;
+      width: 50%;
+      height: 100%;
+    }
+
+    .cardInfo {
+      width: 50%;
+    }
 	}
 </style>

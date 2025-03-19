@@ -1,56 +1,62 @@
 ---
-import Card from "./Card.astro";
-import PlusButton from "./PlusButton.astro";
+import Card from './Card.astro';
+import PlusButton from './PlusButton.astro';
 ---
 
-
-<div class="wrapper">
-  <Card
-    billede="https://via.assets.so/album.png?id=2&q=95&w=360&h=360&fit=fill"
-    catIconPath = "/andet.png"
-    kategori="TEATER"
-    titel="Ølsmagning for pensionister"
-    lokation="ved plænen under buen"
-    tid="16:00"
-    by="Helsingør"
-  />
-  <Card
-    billede="https://via.assets.so/album.png?id=4&q=95&w=360&h=360&fit=fill"
-    catIconPath = "/andet.png"
-    kategori="TEATER"
-    titel="Ølsmagning for pensionister"
-    lokation="ved plænen under buen"
-    tid="16:00"
-    by="Helsingør"
-  />
-  <Card
-    billede="https://via.assets.so/album.png?id=2&q=95&w=360&h=360&fit=fill"
-    catIconPath = "/andet.png"
-    kategori="TEATER"
-    titel="Ølsmagning for pensionister"
-    lokation="ved plænen under buen"
-    tid="16:00"
-    by="Helsingør"
-  />
-  <Card
-    billede="https://via.assets.so/album.png?id=2&q=95&w=360&h=360&fit=fill"
-    catIconPath = "/andet.png"
-    kategori="TEATER"
-    titel="Ølsmagning for pensionister"
-    lokation="ved plænen under buen"
-    tid="16:00"
-    by="Helsingør"
-  />
+<div class='wrapper'>
+	<Card
+		billede='https://via.assets.so/album.png?id=2&q=95&w=360&h=360&fit=fill'
+		catIconPath='/andet.png'
+		kategori='TEATER'
+		titel='Ølsmagning for pensionister'
+		lokation='ved plænen under buen'
+		tid='16:00'
+		by='Helsingør'
+	/>
+	<Card
+		billede='https://via.assets.so/album.png?id=4&q=95&w=360&h=360&fit=fill'
+		catIconPath='/andet.png'
+		kategori='TEATER'
+		titel='Ølsmagning for pensionister'
+		lokation='ved plænen under buen'
+		tid='16:00'
+		by='Helsingør'
+	/>
+	<Card
+		billede='https://via.assets.so/album.png?id=2&q=95&w=360&h=360&fit=fill'
+		catIconPath='/andet.png'
+		kategori='TEATER'
+		titel='Ølsmagning for pensionister'
+		lokation='ved plænen under buen'
+		tid='16:00'
+		by='Helsingør'
+	/>
+	<Card
+		billede='https://via.assets.so/album.png?id=2&q=95&w=360&h=360&fit=fill'
+		catIconPath='/andet.png'
+		kategori='TEATER'
+		titel='Ølsmagning for pensionister'
+		lokation='ved plænen under buen'
+		tid='16:00'
+		by='Helsingør'
+	/>
 </div>
 
 <style>
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 90vw;
-    margin: auto;
-    gap: 55px;
-  }
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 90vw;
+		margin: auto;
+		gap: 55px;
+	}
 
+	@media (min-width: 800px) {
+		.wrapper {
+			flex-direction: row;
+			flex-wrap: wrap;
+			width: 100vw;
+		}
+	}
 </style>
