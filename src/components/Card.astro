@@ -1,11 +1,10 @@
 ---
-const { billede, catIconPath, kategori, titel, lokation, tid, by } =
+const { eventId, billede, catIconPath, kategori, titel, lokation, tid, by } =
 	Astro.props;
 import { Image } from 'astro:assets';
-import PlusButton from './PlusButton.astro';
 ---
 
-<article>
+<article id={eventId} class='card'>
 	<img src={billede} alt='' />
 	<div class='cardInfo'>
 		<div class='categoryContainer'>
@@ -28,6 +27,19 @@ import PlusButton from './PlusButton.astro';
 			<md-icon>add</md-icon>
 		</md-filled-icon-button>
 	</div>
+	<div class='map'>
+		<iframe
+			width='450'
+			height='250'
+			style='border:0'
+			referrerpolicy='no-referrer-when-downgrade'
+			src='https://www.google.com/maps/embed/v1/place
+  ?key=AIzaSyC0ESIHvzFQvIVmhENDdP52CbQFtoQZW1A
+  &q=Eiffel+Tower,Paris+France'
+			allowfullscreen
+		>
+		</iframe>
+	</div>
 </article>
 
 <style>
@@ -49,6 +61,20 @@ import PlusButton from './PlusButton.astro';
 		padding: 0 1rem 0 1rem;
 	}
 
+	.description {
+		display: none;
+	}
+
+	.expanded .description {
+		display: flex;
+	}
+
+	.map {
+		display: none;
+	}
+	.expanded .map {
+		display: unset;
+	}
 	.lastLine {
 		display: flex;
 		width: 100%;
