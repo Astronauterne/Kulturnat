@@ -14,13 +14,54 @@ import Categories from '../components/Categories.astro';
 
 <script>
 	document.addEventListener('astro:page-load', () => {
-		let cards = document.querySelectorAll('.card');
-		console.log(cards);
-		cards.forEach((card) => {
-			card.addEventListener('click', () => {
-				card.classList.toggle('expanded');
-				console.log('expand!');
+		const cardClick = (event) => {
+			let target = event.currentTarget;
+			target.classList.add('expanded');
+			let targetId = target.id;
+			console.log(targetId);
+			let removeTarget = document.getElementById(`${targetId}`);
+			removeTarget?.removeEventListener('click', cardClick);
+			console.log('expand!');
+		};
+
+		function cardHandler() {
+			let cards = document.querySelectorAll('.card');
+			console.log(cards);
+			cards.forEach((card) => {
+				card.addEventListener('click', cardClick);
+			});
+		}
+
+		let descToggles = document.querySelectorAll('.descToggle');
+		descToggles.forEach((descToggle) => {
+			descToggle.addEventListener('click', (event) => {
+				let description = event.currentTarget.closest('.description');
+				let desp = description.querySelector('p');
+				desp?.classList.toggle('expand');
+				if (desp.classList.contains('expand')) {
+					descToggle.innerHTML = `<h5>Læs mindre</h5>
+				<md-filled-icon-button>
+					<md-icon>arrow_drop_up</md-icon>
+				</md-filled-icon-button>`;
+				} else {
+					descToggle.innerHTML = `<h5>Læs mere</h5>
+				<md-filled-icon-button>
+					<md-icon>arrow_drop_down</md-icon>
+				</md-filled-icon-button>`;
+				}
 			});
 		});
+
+		let closeButtons = document.querySelectorAll('.closeButton');
+		closeButtons.forEach((closeButton) => {
+			closeButton.addEventListener('click', (event) => {
+				let target = event.currentTarget.parentNode.parentNode;
+				let targetId = target.id;
+				console.log(targetId);
+				console.log(target);
+				target.classList.toggle('expanded');
+			});
+		});
+		cardHandler();
 	});
 </script>

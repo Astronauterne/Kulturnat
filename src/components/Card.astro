@@ -5,22 +5,57 @@ import { Image } from 'astro:assets';
 ---
 
 <article id={eventId} class='card'>
-	<img src={billede} alt='' />
+	<div class='topContainer'>
+		<div class='closeButton'>
+			<md-filled-icon-button>
+				<md-icon>close</md-icon>
+			</md-filled-icon-button>
+		</div>
+		<img src={billede} alt='' />
+		<div class='mapDesktop'>
+			<iframe
+				src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2228.8248245725595!2d12.613497513084457!3d56.03902187307971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4652310d8be4e5e3%3A0xff770789f4f42d2f!2sM%2FS%20Maritime%20Museum!5e0!3m2!1sen!2sdk!4v1742420114339!5m2!1sen!2sdk'
+				style='border:0;'
+				allowfullscreen=''
+				loading='lazy'
+				referrerpolicy='no-referrer-when-downgrade'></iframe>
+		</div>
+	</div>
 	<div class='cardInfo'>
 		<div class='categoryContainer'>
 			<Image src={catIconPath} alt='' height='32' width='32' />
 			<p>{kategori}</p>
 		</div>
 		<h4 class='eventName'>{titel}</h4>
-		<div class='container'>
-			<md-icon>location_on</md-icon>
-			<p>{lokation}</p>
+		<div class='infoContainer'>
+			<div class='container'>
+				<md-icon>location_on</md-icon>
+				<p>{lokation}</p>
+			</div>
+			<div class='container'>
+				<md-icon>schedule</md-icon>
+				<p>{tid}</p>
+			</div>
 		</div>
-		<div class='container'>
-			<md-icon>schedule</md-icon>
-			<p>{tid}</p>
+		<div class='description'>
+			<div class='descToggle'>
+				<h5>Læs mere</h5>
+				<md-filled-icon-button>
+					<md-icon>arrow_drop_down</md-icon>
+				</md-filled-icon-button>
+			</div>
+			<p>
+				På denne særlige aften kan du udforske de dybeste hjørner af
+				museet, hvor unikke genstande og glemte fortællinger venter på
+				at blive opdaget. Hør om Helsingørs rige søfartshistorie,
+				smuglernes hemmelige ruter og de dramatiske skæbner, der har
+				udspillet sig på åbent hav. Gå på opdagelse i de lukkede
+				arkiver, oplev eksklusive genstande og få en enestående indsigt
+				i en tid, hvor Helsingør var et knudepunkt for handel og
+				eventyr.
+			</p>
 		</div>
-		<p>{by}</p>
+		<p class='city'>{by}</p>
 	</div>
 	<div class='lastLine'>
 		<md-filled-icon-button id='addToggle'>
@@ -29,16 +64,11 @@ import { Image } from 'astro:assets';
 	</div>
 	<div class='map'>
 		<iframe
-			width='450'
-			height='250'
-			style='border:0'
-			referrerpolicy='no-referrer-when-downgrade'
-			src='https://www.google.com/maps/embed/v1/place
-  ?key=AIzaSyC0ESIHvzFQvIVmhENDdP52CbQFtoQZW1A
-  &q=Eiffel+Tower,Paris+France'
-			allowfullscreen
-		>
-		</iframe>
+			src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2228.8248245725595!2d12.613497513084457!3d56.03902187307971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4652310d8be4e5e3%3A0xff770789f4f42d2f!2sM%2FS%20Maritime%20Museum!5e0!3m2!1sen!2sdk!4v1742420114339!5m2!1sen!2sdk'
+			style='border:0;'
+			allowfullscreen=''
+			loading='lazy'
+			referrerpolicy='no-referrer-when-downgrade'></iframe>
 	</div>
 </article>
 
@@ -48,6 +78,7 @@ import { Image } from 'astro:assets';
 		flex-direction: column;
 		border-radius: 18px;
 		background-color: var(--card-bg);
+		box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 	}
 	article img {
 		border-radius: 18px 18px 0px 0px;
@@ -61,19 +92,95 @@ import { Image } from 'astro:assets';
 		padding: 0 1rem 0 1rem;
 	}
 
-	.description {
-		display: none;
+	iframe {
+		width: 100%;
+		height: 300px;
+		border-radius: 0px 0px 18px 18px;
+		transform: translateY(20px);
 	}
 
+	.topContainer {
+		display: grid;
+		grid-template-columns: 1;
+		grid-template-rows: 1;
+	}
+
+	.topContainer img {
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	.topContainer .closeButton {
+		display: none;
+		grid-column: 1;
+		grid-row: 1;
+		place-self: start end;
+		padding-top: 0.5rem;
+		padding-right: 0.5rem;
+		z-index: +1;
+	}
+
+	.infoContainer {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+	.mapDesktop {
+		display: none;
+	}
+	.expanded .closeButton {
+		display: unset;
+	}
+	.descToggle {
+		display: none;
+		text-transform: none;
+		gap: 1rem;
+		align-items: center;
+	}
+
+	.expanded .description .descToggle {
+		display: flex;
+		justify-content: center;
+	}
+	.descToggle md-icon {
+		color: var(--card-bg);
+		--md-icon-size: 2rem;
+	}
+
+	.expanded .city {
+		display: none;
+	}
+	.description {
+		display: none;
+		text-transform: none;
+	}
 	.expanded .description {
 		display: flex;
+		flex-direction: column-reverse;
+		justify-content: center;
+	}
+
+	.description p {
+		display: none;
+		padding: 1rem;
+		font-size: 1rem;
+	}
+	.description p.expand {
+		display: unset;
 	}
 
 	.map {
 		display: none;
+		border-radius: 18px;
 	}
 	.expanded .map {
 		display: unset;
+	}
+
+	.expanded .lastLine {
+		padding-top: 2rem;
+		transform: translateY(0rem);
 	}
 	.lastLine {
 		display: flex;
@@ -81,11 +188,6 @@ import { Image } from 'astro:assets';
 		padding-left: 0.5rem;
 		justify-content: space-between;
 		transform: translateY(-1rem);
-	}
-
-	.lastLine md-icon {
-		color: var(--card-bg);
-		--md-icon-size: 2rem;
 	}
 
 	.cardInfo {
@@ -133,20 +235,98 @@ import { Image } from 'astro:assets';
 			width: 33.32013rem;
 		}
 
-		article img {
-			border-radius: 0px 18px 18px 0px;
-			width: 50%;
-			height: 100%;
+		article.expanded {
+			height: 75vh;
+			width: 80vw;
+			position: absolute;
+			z-index: +1;
+			border: 3px solid var(--card-shadow);
 		}
 
-		.cardInfo {
+		.expanded .map {
+			display: none;
+		}
+		.topContainer {
 			width: 50%;
 			height: 100%;
-			transform: translateX(-2rem);
+			grid-template-rows: 1fr 1fr;
+		}
+
+		.topContainer img {
+			grid-row: 1 / span 2;
+			border-radius: 0px 18px 18px 0px;
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			align-self: stretch;
+		}
+
+		.expanded .topContainer img {
+			border-radius: 0px 14px 0px 0px;
+			grid-row: 1 / span 1;
+		}
+
+		.expanded .mapDesktop {
+			grid-column: 1 / span 1;
+			grid-row: 2 / span 1;
+			display: unset;
+		}
+
+		.mapDesktop iframe {
+			height: 100%;
+			transform: translateY(0vh);
+			border-radius: 0px 0px 18px 0px;
+		}
+
+		.lastLine {
+			width: 10%;
+		}
+		.cardInfo {
+			width: 40%;
+			height: 100%;
+			justify-content: center;
+			align-items: center;
 		}
 
 		.lastLine {
 			transform: translateY(9rem);
+		}
+
+		.expanded .lastLine {
+			transform: translateY(20rem);
+		}
+
+		.expanded .description p {
+			display: unset;
+			padding-right: 4rem;
+		}
+
+		.expanded .description .descToggle {
+			display: none;
+		}
+
+		.categoryContainer p {
+			font-size: 1.5rem;
+		}
+
+		.expanded .categoryContainer p {
+			font-size: 2rem;
+		}
+
+
+		.container {
+			display: flex;
+			align-items: center;
+			width: 100%;
+			padding-left: 15%;
+			padding-right: 15%;
+			gap: 0.5rem;
+		}
+
+		.expanded .eventName {
+			font-size: 4rem;
+			padding-right: 4rem;
+			text-align: center;
 		}
 	}
 </style>

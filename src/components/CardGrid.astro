@@ -1,24 +1,23 @@
 ---
 import Card from './Card.astro';
-import events from '../data/events.json'
+import events from '../data/events.json';
 ---
 
 <div class='wrapper'>
 	{
 		events.map((e) => (
-		<Card
-		eventId = {e.eventId}
-		billede= {e.billede}
-		catIconPath={e.catIconPath}
-		kategori={e.kategori}
-		titel={e.titel}
-		lokation={e.lokation}
-		tid={e.tid}
-		by={e.by}
-	/>
+			<Card
+				eventId={e.eventId}
+				billede={e.billede}
+				catIconPath={e.catIconPath}
+				kategori={e.kategori}
+				titel={e.titel}
+				lokation={e.lokation}
+				tid={e.tid}
+				by={e.by}
+			/>
 		))
 	}
-
 </div>
 
 <style>
