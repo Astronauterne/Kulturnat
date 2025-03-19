@@ -1,5 +1,6 @@
 ---
-const { billede, catIconPath, kategori, titel, lokation, tid, by } = Astro.props;
+const { billede, catIconPath, kategori, titel, lokation, tid, by } =
+	Astro.props;
 import { Image } from 'astro:assets';
 import PlusButton from './PlusButton.astro';
 ---
@@ -8,7 +9,7 @@ import PlusButton from './PlusButton.astro';
 	<img src={billede} alt='' />
 	<div class='cardInfo'>
 		<div class='categoryContainer'>
-      <Image src={catIconPath} alt='' height=32 width=32></Image>
+			<Image src={catIconPath} alt='' height='32' width='32' />
 			<p>{kategori}</p>
 		</div>
 		<h4 class='eventName'>{titel}</h4>
@@ -25,7 +26,7 @@ import PlusButton from './PlusButton.astro';
 		flex-direction: column;
 		border-radius: 18px;
 		background-color: var(--card-bg);
-    padding-bottom: 1rem;
+		padding-bottom: 1rem;
 	}
 	article img {
 		border-radius: 18px 18px 0px 0px;
@@ -37,42 +38,41 @@ import PlusButton from './PlusButton.astro';
 		align-items: center;
 		gap: 1.5rem;
 		padding-top: 1rem;
-    text-transform: uppercase;
-    
+		text-transform: uppercase;
 	}
 
-  .categoryContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0.5rem;
-  }
+	.categoryContainer {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 0.5rem;
+	}
 
-.categoryContainer img {
-  height: 2rem;
-}
+	.categoryContainer img {
+		height: 2rem;
+	}
 
 	.eventName {
 		text-align: center;
 	}
 
-  @media (min-width: 800px) {
+	@media (min-width: 800px) {
 		article {
 			flex-direction: row-reverse;
-      padding-bottom: 0px;
-      align-items: center;
-      height: 21.875rem;
-      width: 33.32013rem;;
+			padding-bottom: 0px;
+			align-items: center;
+			height: 21.875rem;
+			width: 33.32013rem;
 		}
 
-    article img {
-      border-radius: 0px 18px 18px 0px;
-      width: 50%;
-      height: 100%;
-    }
+		article img {
+			border-radius: 0px 18px 18px 0px;
+			width: 50%;
+			height: 100%;
+		}
 
-    .cardInfo {
-      width: 50%;
-    }
+		.cardInfo {
+			width: 50%;
+		}
 	}
 </style>
