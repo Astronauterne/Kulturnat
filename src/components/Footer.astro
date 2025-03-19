@@ -61,6 +61,7 @@ import FooterBorder from '../components/footer/FooterBorder.astro';
 		padding: 1rem;
 		gap: 1rem;
 		margin-top: 20vh;
+		overflow-x: hidden;
 	}
 
 	.contact {
@@ -104,19 +105,18 @@ import FooterBorder from '../components/footer/FooterBorder.astro';
 		gap: 2rem;
 	}
 
-    @media (min-width: 800px) {
+	@media (min-width: 800px) {
+		footer {
+			gap: 2rem;
+		}
+		.contactContainer {
+			display: flex;
+			justify-content: space-between;
+		}
 
-        footer {
-            gap:2rem;
-        }
-        .contactContainer {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .shortcutContainer {
-		display: flex;
-        width: 55%;
+		.shortcutContainer {
+			display: flex;
+			width: 55%;
+		}
 	}
-    }
 </style>
