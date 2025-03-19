@@ -13,11 +13,11 @@ import PlusButton from './PlusButton.astro';
 			<p>{kategori}</p>
 		</div>
 		<h4 class='eventName'>{titel}</h4>
-		<div>
+		<div class='container'>
 			<md-icon>location_on</md-icon>
 			<p>{lokation}</p>
 		</div>
-		<div>
+		<div class='container'>
 			<md-icon>schedule</md-icon>
 			<p>{tid}</p>
 		</div>
@@ -42,12 +42,12 @@ import PlusButton from './PlusButton.astro';
 	}
 
 	article h4 {
-			font-size: 1.5rem;
-			color: var(--heading-h4);
-			font-family: 'Afacad Regular';
-			text-align: center;
-			padding: 0 1rem 0 1rem;
-		}
+		font-size: 1.5rem;
+		color: var(--heading-h4);
+		font-family: 'Afacad Regular';
+		text-align: center;
+		padding: 0 1rem 0 1rem;
+	}
 
 	.lastLine {
 		display: flex;
@@ -72,11 +72,11 @@ import PlusButton from './PlusButton.astro';
 		text-transform: uppercase;
 	}
 
-	.cardInfo div {
+	.container {
 		display: flex;
 		align-items: center;
 		width: 100%;
-		padding-left: 15%;
+		padding-left: 30%;
 		padding-right: 15%;
 		gap: 0.5rem;
 	}
