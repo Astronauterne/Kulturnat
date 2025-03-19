@@ -17,6 +17,10 @@ const { pageTitle } = Astro.props;
 		<meta name='generator' content={Astro.generator} />
 
 		<title>{pageTitle}</title>
+		<link
+			href='https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined'
+			rel='stylesheet'
+		/>
 		<ClientRouter />
 	</head>
 	<Header />
@@ -25,13 +29,21 @@ const { pageTitle } = Astro.props;
 	</body>
 	<Footer />
 	<script
-		is:inline data-astro-rerun
+		is:inline
+		data-astro-rerun
 		src='https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js'
 	></script>
 	<script is:inline data-astro-rerun src='/jquery.ripples.js'></script>
 	<script is:inline data-astro-rerun src='/ripples.js'></script>
 
 	<style is:global>
+		:root {
+			--md-sys-color-primary: var(--button-fg);
+		}
+		md-icon {
+			color: var(--card-bg);
+			--md-icon-size: 8rem;
+		}
 		body {
 			background-image: url('../assets/sand.webp');
 			background-size: cover;
