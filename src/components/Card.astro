@@ -1,43 +1,78 @@
 ---
-const { billede, kategori, titel, lokation, tid, by } = Astro.props;
-import PlusButton from "./PlusButton.astro";
+const { billede, catIconPath, kategori, titel, lokation, tid, by } = Astro.props;
+import { Image } from 'astro:assets';
+import PlusButton from './PlusButton.astro';
 ---
 
 <article>
-  <img src={billede} alt="" />
-  <div>
-    <p>{kategori}</p>
-    <h4>{titel}</h4>
-    <p>{lokation}</p>
-    <p>{tid}</p>
-    <PlusButton />
-    <p>{by}</p>
-  </div>
+	<img src={billede} alt='' />
+	<div class='cardInfo'>
+		<div class='categoryContainer'>
+      <Image src={catIconPath} alt='' height=32 width=32></Image>
+			<p>{kategori}</p>
+		</div>
+		<h4 class='eventName'>{titel}</h4>
+		<p>{lokation}</p>
+		<p>{tid}</p>
+		<p>{by}</p>
+	</div>
 </article>
 
 <!-- til mobil -->
 <style>
-  article {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    border-radius: 18px;
-    max-width: 600px;
-    background-color: beige;
-  }
-  article img {
-    padding: 0 10px 0 0;
-  }
-</style>
+	article {
+		display: flex;
+		flex-direction: column;
+		border-radius: 18px;
+		background-color: var(--card-bg);
+    padding-bottom: 1rem;
+	}
+	article img {
+		border-radius: 18px 18px 0px 0px;
+	}
 
-<!-- media query til desktop -->
-<style>
-  @media (min-width: 800px) {
-    article {
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: none;
-    }
-    article img {
-      padding: 0 0 10px 0;
-    }
+	.cardInfo {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1.5rem;
+		padding-top: 1rem;
+    text-transform: uppercase;
+    
+	}
+
+  .categoryContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
   }
+
+.categoryContainer img {
+  height: 2rem;
+}
+
+	.eventName {
+		text-align: center;
+	}
+
+  @media (min-width: 800px) {
+		article {
+			flex-direction: row-reverse;
+      padding-bottom: 0px;
+      align-items: center;
+      height: 21.875rem;
+      width: 33.32013rem;;
+		}
+
+    article img {
+      border-radius: 0px 18px 18px 0px;
+      width: 50%;
+      height: 100%;
+    }
+
+    .cardInfo {
+      width: 50%;
+    }
+	}
 </style>
