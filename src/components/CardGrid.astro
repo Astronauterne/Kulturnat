@@ -3,10 +3,11 @@ import Card from "./Card.astro";
 import PlusButton from "./PlusButton.astro";
 ---
 
-<h2>KATEGORIER</h2>
+
 <div class="wrapper">
   <Card
     billede="https://via.assets.so/album.png?id=2&q=95&w=360&h=360&fit=fill"
+    catIconPath = "/andet.png"
     kategori="TEATER"
     titel="Ølsmagning for pensionister"
     lokation="ved plænen under buen"
@@ -15,6 +16,7 @@ import PlusButton from "./PlusButton.astro";
   />
   <Card
     billede="https://via.assets.so/album.png?id=4&q=95&w=360&h=360&fit=fill"
+    catIconPath = "/andet.png"
     kategori="TEATER"
     titel="Ølsmagning for pensionister"
     lokation="ved plænen under buen"
@@ -23,6 +25,7 @@ import PlusButton from "./PlusButton.astro";
   />
   <Card
     billede="https://via.assets.so/album.png?id=2&q=95&w=360&h=360&fit=fill"
+    catIconPath = "/andet.png"
     kategori="TEATER"
     titel="Ølsmagning for pensionister"
     lokation="ved plænen under buen"
@@ -31,6 +34,7 @@ import PlusButton from "./PlusButton.astro";
   />
   <Card
     billede="https://via.assets.so/album.png?id=2&q=95&w=360&h=360&fit=fill"
+    catIconPath = "/andet.png"
     kategori="TEATER"
     titel="Ølsmagning for pensionister"
     lokation="ved plænen under buen"
@@ -43,14 +47,10 @@ import PlusButton from "./PlusButton.astro";
   .wrapper {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    width: 90vw;
+    margin: auto;
     gap: 55px;
   }
 
-  @media (min-width: 800px) {
-    .wrapper {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 55px;
-    }
-  }
 </style>
