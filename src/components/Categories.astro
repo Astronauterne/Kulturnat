@@ -1,0 +1,74 @@
+---
+const categories = [
+	'alle',
+	'scene',
+	'gastronomi',
+	'litteratur',
+	'musik',
+	'udstilling',
+	'andet',
+];
+---
+
+<h3>Kategorier</h3>
+<div class='catContainer'>
+	{categories.map((category) => 
+    <a href=`/program?category=${category}`>
+    <div class='catButton'>
+        <img src=`/${category}.png` alt="">{category}
+    </div>
+    </a>)}
+</div>
+
+<style>
+    h3 {
+        text-align: center;
+        padding-bottom: 1.5rem;
+    }
+
+	.catContainer {
+		display: flex;
+		flex-wrap: wrap;
+		width: 90vw;
+		margin-left: 5vw;
+		margin-right: 5vw;
+		margin-bottom: 4rem;
+		justify-content: center;
+		gap: 1rem;
+	}
+
+	.catButton {
+		display: flex;
+		text-transform: uppercase;
+		font-family: 'Futura Medium';
+		width: 10rem;
+		height: 4rem;
+		padding: 0.875rem 0.875rem 0.875rem 0.5rem;
+		align-items: center;
+		gap: 0.5625rem;
+		flex-shrink: 0;
+		border-radius: 8px;
+		border: 1.5px solid var(--button-border, #242424);
+		box-shadow: 2px 3px 0px 0px var(--button-shadow);
+	}
+
+    .catButton img {
+        height: 100%;
+        width: auto;
+    }
+
+    .catContainer a {
+        text-decoration: none;
+        color: var(--heading-fg);
+    }
+
+    .catContainer a:visited {
+        color: var(--heading-fg);
+    }
+
+	.catButton:hover {
+		transform: translateX(5px) translateY(5px);
+		box-shadow: none;
+		transition: 0.5s;
+	}
+</style>
