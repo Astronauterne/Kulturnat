@@ -40,6 +40,7 @@
 		list-style: none;
 		justify-content: center;
 		margin: auto;
+		padding-left: 10vw;
 	}
 
 	.menuOverlay li {
@@ -51,7 +52,7 @@
 		text-decoration: none;
 		color: var(--heading-fg);
 		font-family: 'Futura Medium';
-		font-size: 4rem;
+		font-size: clamp(1rem, 10vw, 4rem);
 		font-weight: 700;
 	}
 
@@ -74,5 +75,11 @@
 
 	.menuOverlay a:hover::before {
 		transform: scaleX(1);
+	}
+
+	@media (min-width: 800px) {
+		.menuOverlay ul {
+		padding-left: 0vw;
+	}
 	}
 </style>
